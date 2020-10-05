@@ -9,6 +9,10 @@ from routes import pages
 app = Flask(__name__)
 
 
+def getApp():
+    return app
+
+
 if __name__ == '__main__':
     SERVER_ROOT = '127.0.0.1' # local host
     app.debug = True

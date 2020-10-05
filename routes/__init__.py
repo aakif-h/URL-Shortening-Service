@@ -48,17 +48,4 @@ def read_short_URL():
         return jsonify(**{'message': 'Unexpected Error'}), StatusCode_ServerError
 
 
-@pages.route('/getAllURLs', methods=['GET'])
-def get_all_URLs():
-    try:
-        URL_list = get_all()
-        url_data = []
-        for URL in URL_list:
-            url_data.append({"url":URL.url, "short_url":URL.short_url})
-        return jsonify(url_data)
-    except Exception as e:
-        print(e)
-        return jsonify(**{'message': 'Unexpected Error'}), StatusCode_ServerError
-
-
 
