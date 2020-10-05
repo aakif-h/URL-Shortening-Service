@@ -39,4 +39,4 @@ in the database. To avoid privacy issues, this can be amended by taking advantag
 each user's LocalStorage.
 
 ## Preview
-<img src="img/webpage.png">
+<img src="img/webpage.PNG">
