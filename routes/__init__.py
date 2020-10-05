@@ -13,8 +13,13 @@ pages = Blueprint('pages', __name__)
 @pages.route('/', methods=['GET'])
 def index():
     try:
-        return render_template('index.html')
-    except:
+        URL_list = get_all()
+        url_data = []
+        for URL in URL_list:
+            url_data.append({"url":URL.url, "short_url":URL.short_url})
+        return render_template('index.html', url_data=url_data)
+    except Exception as e:
+        print(e)
         return jsonify(**{'message': 'Unexpected Error'}), StatusCode_ServerError
 
 

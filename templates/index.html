@@ -3,22 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title>URL Shortener</title>
+        <link rel="stylesheet" href="../static/styles/styles.css">
     </head>
-
     <body>
-        <h1>URL Shortener</h1>
-        <form action="/addURL" method="post">
-            <input type="text" name="url" placeholder="URL to shorten..." required><br>
-            <input type="submit" value="Submit">
-        </form>
+        <div class="topnav">
+            <p>URL Shortener</p>
+        </div>
 
-        <form action="/readShortenedURL" method="post">
-            <input type="text" name="short_url" placeholder="Process shortened URL..." required><br>
-            <input type="submit" value="Submit">
-        </form>
+        <div class="row">
+            <div class="column">
+                <form class="shorten-form" action="/addURL" method="post">
+                    <input type="text" name="url" placeholder="URL to shorten..." required><br>
+                    <input type="submit" value="Shorten URL">
+                </form>
+            </div>
+            <div class="column">
+                <form class="redirect-form" action="/readShortenedURL" method="post">
+                    <input type="text" name="short_url" placeholder="Process shortened URL..." required><br>
+                    <input type="submit" value="Redirect Me">
+                </form>
+            </div>
+        </div>
 
-        <form action="/getAllURLs" method="get">
-            <input type="submit" value="Get All URLs">
-        </form>
+        {% if url_data != null %}
+        <table class="urls">
+            <tr>
+                <th>Original URL</th>
+                <th>Shortened URL</th>
+            </tr>
+            {% for url in url_data %}
+            <tr>
+                <td>{{ url['url'] }}</td>
+                <td>{{ url['short_url'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
     </body>
 </html>
