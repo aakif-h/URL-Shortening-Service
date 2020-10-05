@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>URL Shortener</title>
+    </head>
+
+    <body>
+        <h1>URL Shortener</h1>
+        <form action="/addURL" method="post">
+            <input type="text" name="url" placeholder="URL to shorten..." required><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <form action="/readShortenedURL" method="post">
+            <input type="text" name="short_url" placeholder="Process shortened URL..." required><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <form action="/getAllURLs" method="get">
+            <input type="submit" value="Get All URLs">
+        </form>
+    </body>
+</html>
