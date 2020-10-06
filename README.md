@@ -9,11 +9,12 @@ features of a shortening service.
 
 ## How to Run
 In order to run this web application, you need to have Python 2.7 installed. After 
-completing this prerequisite, follow these steps:  
-1. Navigate to the project directory
-1. Run `python -m pip install -r requirements.txt`
-2. Run `python __init__.py` 
-3. Open localhost (http://127.0.0.1:5000/) on your browser, and use the application!
+completing this prerequisite, follow these steps in terminal:
+1. Run `git clone https://github.com/aakif-h/URL-Shortening-Service.git`  
+2. Navigate to the project directory
+3. Run `python -m pip install -r requirements.txt`
+4. Run `python __init__.py` 
+5. Open localhost (http://127.0.0.1:5000/) on your browser, and use the application!
 
 Note: You might need to use `python2` rather than `python` depending on the environment variable that maps to your version of Python2.
 
